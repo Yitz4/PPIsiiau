@@ -39,7 +39,7 @@
     function findStudent() {
         let findingStudentCode  = document.getElementById("studentCode").value;
 
-        const findingStudentURL = "http://localhost:8080/students/findStudentByCode/"+findingStudentCode;
+        const findingStudentURL = "http://udg-env.eba-z87makkw.us-east-2.elasticbeanstalk.com/students/findStudentByCode/"+findingStudentCode;
         fetchDataAndPopulateTable(findingStudentURL);
 
     }
@@ -91,7 +91,7 @@
     }
 
     // URL from where to fetch JSON data
-    const url = "http://localhost:8080/students"; // Replace with your JSON URL
+    const url = "http://udg-env.eba-z87makkw.us-east-2.elasticbeanstalk.com/students"; // Replace with your JSON URL
 
     // Call the function to fetch data and populate table
     fetchDataAndPopulateTable(url);
@@ -99,7 +99,7 @@
 
     function deleteStudent(id) {
         //cuando ya estemos seguros de que se quiere eliminar.
-        const deleteUrl = "http://localhost:8080/students/delete-student-by-id?id="+id;
+        const deleteUrl = "http://udg-env.eba-z87makkw.us-east-2.elasticbeanstalk.com/students/delete-student-by-id?id="+id;
 
         fetch(deleteUrl, {
             method: 'DELETE',
@@ -133,7 +133,6 @@
     }
 
     function editStudentButton(id){
-        //TODO: conocer el id del usuario que queremos editar,  check
         // cambiar las propiedades de la fila para poder editar
         let currentRow = document.getElementById(id);
 
@@ -179,7 +178,7 @@
             score : scoreCell.innerHTML
         }
 
-        const updateUrl = "http://localhost:8080/students";
+        const updateUrl = "http://udg-env.eba-z87makkw.us-east-2.elasticbeanstalk.com/students";
 
         const requestOptions = {
             method: 'PUT',

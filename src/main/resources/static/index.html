@@ -55,9 +55,9 @@
         const formStudentDegree = document.getElementById("degree").value;
         const formStudentScore = document.getElementById("score").value;
 
-        const apiUrl = "http://localhost:8080/students";
+        const apiUrl = "http://udg-env.eba-z87makkw.us-east-2.elasticbeanstalk.com/students";
 
-        //crear el objeto
+        // Crear el objeto
 
         const studentObject = {
             code : formStudentCode,
@@ -67,7 +67,7 @@
             score : formStudentScore
         };
 
-        //crear las opciones de conexion, las request
+        // Crear las opciones de conexion, las request
         const requestOptions = {
             method: 'POST',
             headers: {
@@ -76,7 +76,7 @@
             body: JSON.stringify(studentObject)
         };
 
-        //llamar a la URL, haciendo el POST request
+        // Llamar a la URL, haciendo el POST request
         fetch(apiUrl, requestOptions)
             .then(response => {
                 if(!response.ok) {
@@ -86,12 +86,12 @@
             })
             .then(studentFromAPI =>{
                 console.log('Succes:', studentFromAPI);
-                //Respuesta de exito
+                //Exito
                 cleanScreen();
             })
             .catch(error => {
                 console.log('Error:', error);
-                //Respuesta de error
+                //Error
             });
     }
 
